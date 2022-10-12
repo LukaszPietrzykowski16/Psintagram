@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NgModule } from '@angular/core';
+import { ImageService } from './services/image.service';
 import { PostService } from './services/post.service';
+
 
 @Component({
   selector: 'app-root',
@@ -10,15 +12,18 @@ import { PostService } from './services/post.service';
 })
 export class AppComponent {
   myData: any;
+  myData2: any;
   arr: any;
   test: [] = [];
   selected: number = 1;
+  httpClient: any;
+  image: string | undefined;
 
-  constructor(private postService: PostService) {}
+  constructor(private postService: PostService, private imageService: ImageService) {}
   onChange(newValue: any) {
     this.breed = newValue.value
     this.url = `https://dog.ceo/api/breed/${this.breed}/images/random`
-    console.log(this.url)
+
   }
  
   breed = 'affenpinscher'
@@ -33,10 +38,18 @@ export class AppComponent {
       this.myData = data;
       this.arr = Object.keys(this.myData.message);
     });
+
+    this.imageService.getData().subscribe((data) => {
+      this.myData2 = data;
+      this.image = this.myData2.message
+
+    });
     
    
-   
   }
+
+
+  
 
 }
 
