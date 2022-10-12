@@ -18,8 +18,9 @@
 <aside> Dogs here </aside>
 
 <select name="dogs" id="dogs">
-  <option *ngFor="let item of names | keyvalue" > {{item.key}}:{{item.value}} </option>
+  <option *ngFor="let item of arr | keyvalue" > {{item.value}} </option>
 </select>
+
 
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
