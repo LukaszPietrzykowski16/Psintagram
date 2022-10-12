@@ -10,6 +10,7 @@ import { PostService } from './services/post.service';
 })
 export class AppComponent {
   myData: any;
+  names: any;
   constructor(private postService: PostService) {}
   
   clicked = false;
@@ -21,9 +22,15 @@ export class AppComponent {
 
   ngOnInit(): void {
     this.postService.getData().subscribe((data) => {
-      
       this.myData = data;
+      this.names = this.myData.message;
+      console.log(this.names)
+      this.names.bulldog.map((test:any) => {
+        console.log(test)
+      })
+      
     });
+   
   }
 
 }

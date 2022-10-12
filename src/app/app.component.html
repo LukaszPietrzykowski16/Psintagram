@@ -15,8 +15,12 @@
 
 <nav class="test"> Psintagram </nav>
 <main class="main"> Hello  </main>
-{{ myData | json }}
 <aside> Dogs here </aside>
+
+<select name="dogs" id="dogs">
+  <option *ngFor="let item of names | keyvalue" > {{item.key}}:{{item.value}} </option>
+</select>
+
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
