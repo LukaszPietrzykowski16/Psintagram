@@ -12,16 +12,21 @@ export class AppComponent {
   myData: any;
   arr: any;
   test: [] = [];
- 
-  constructor(private postService: PostService) {}
-  
-  clicked = false;
-  title = 'myapp';
+  selected: number = 1;
 
-  handleClick(){
-    this.clicked = true;
+  constructor(private postService: PostService) {}
+  onChange(newValue: any) {
+    this.breed = newValue.value
+    this.url = `https://dog.ceo/api/breed/${this.breed}/images/random`
+    console.log(this.url)
   }
  
+  breed = 'affenpinscher'
+  url = `https://dog.ceo/api/breed/${this.breed}/images/random`
+
+
+  paragraph = "Poczytaj więcej o tej rasie na wikipedii:"
+  
   
   ngOnInit(): void {
     this.postService.getData().subscribe((data) => {
@@ -34,3 +39,4 @@ export class AppComponent {
   }
 
 }
+

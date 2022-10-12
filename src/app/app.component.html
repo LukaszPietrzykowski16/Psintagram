@@ -17,12 +17,16 @@
 <main class="main"> Hello  </main>
 <aside> Dogs here </aside>
 
-<select name="dogs" id="dogs">
-  <option *ngFor="let item of arr | keyvalue" > {{item.value}} </option>
+<select name="dogs" id="dogs" #dog (change)="onChange($event.target)">
+  <option *ngFor="let item of arr | keyvalue" [value]="item.value"> {{item.value}} </option>
 </select>
 
+<div class="img-dog">
+  <img src={{url}}/>
+</div>
 
-
+{{paragraph}}
+<a href="https://en.wikipedia.org/wiki/{{this.breed}}"> Link! </a>
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
 <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
