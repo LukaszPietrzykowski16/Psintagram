@@ -41,7 +41,11 @@ export class AppComponent {
       this.myData = data;
       this.arr = Object.keys(this.myData.message);
     });
-   
+    this.imageService.getData(this.breed).subscribe((data) => {
+      this.myData2 = data;
+      this.image = this.myData2.message
+    
+    });
     
     
    
