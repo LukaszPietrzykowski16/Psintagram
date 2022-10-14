@@ -14,9 +14,10 @@ export class ImageService {
   onChange(newValue: any) {
     this.breed = newValue.value
     this.url = `https://dog.ceo/api/breed/${this.breed}/images/random`
-
+    console.log(this.breed)
   }
   getData(){
+    this.onChange
     return this.httpClient.get(`https://dog.ceo/api/breed/${this.breed}/images/random`);
   }
   

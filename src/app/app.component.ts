@@ -19,15 +19,14 @@ export class AppComponent {
   httpClient: any;
   image: string | undefined;
 
-  constructor(private postService: PostService, private imageService: ImageService) {}
+  constructor(private postService: PostService) {}
+  // changing links value 
   onChange(newValue: any) {
-    this.breed = newValue.value
-    this.url = `https://dog.ceo/api/breed/${this.breed}/images/random`
-
+    this.breed = newValue.valu
   }
  
   breed = 'affenpinscher'
-  url = `https://dog.ceo/api/breed/${this.breed}/images/random`
+
 
 
   paragraph = "Poczytaj więcej o tej rasie na wikipedii:"
@@ -38,14 +37,7 @@ export class AppComponent {
       this.myData = data;
       this.arr = Object.keys(this.myData.message);
     });
-
-    this.imageService.getData().subscribe((data) => {
-      this.myData2 = data;
-      this.image = this.myData2.message
-
-    });
     
-   
   }
 
 

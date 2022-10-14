@@ -4,10 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DogImageComponent } from './dog-image/dog-image.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DogImageComponent
   ],
   imports: [
     BrowserModule,
