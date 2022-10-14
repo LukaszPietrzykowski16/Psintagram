@@ -1,3 +1,11 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 <style>
  
@@ -13,11 +21,12 @@
   <option *ngFor="let item of arr | keyvalue" [value]="item.value"> {{item.value}} </option>
 </select>
 
-
-<app-dog-image></app-dog-image>
-
+<div class="img-dog">
+  <img src={{image}}/>
+</div>
 
 {{paragraph}}
 <a href="https://en.wikipedia.org/wiki/{{this.breed}}"> Link! </a>
+
 
 <router-outlet></router-outlet>

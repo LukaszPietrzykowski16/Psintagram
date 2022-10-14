@@ -7,18 +7,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ImageService {
 
-  breed = 'affenpinscher'
-  url = `https://dog.ceo/api/breed/${this.breed}/images/random`
-   
   constructor(private httpClient: HttpClient) { }
-  onChange(newValue: any) {
-    this.breed = newValue.value
-    this.url = `https://dog.ceo/api/breed/${this.breed}/images/random`
-    console.log(this.breed)
-  }
-  getData(){
-    this.onChange
-    return this.httpClient.get(`https://dog.ceo/api/breed/${this.breed}/images/random`);
+ 
+  getData(inputValue: string){
+    
+    console.log(inputValue)
+    return this.httpClient.get(`https://dog.ceo/api/breed/${inputValue}/images/random`);
   }
   
 }
