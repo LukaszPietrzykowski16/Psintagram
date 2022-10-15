@@ -9,11 +9,14 @@
 
 <main> 
   <section>
-    <h1> Wybierz rasę: </h1>
+    <div class="change-breed">
+      <h1> Wybierz rasę: </h1>
 
-    <select name="dogs" id="dogs" #dog (change)="onChange($event.target)">
-      <option *ngFor="let item of arr | keyvalue" [value]="item.value"> {{item.value}} </option>
-    </select>
+      <select name="dogs" id="dogs" class="decorated" #dog (change)="onChange($event.target)">
+        <option *ngFor="let item of arr | keyvalue" [value]="item.value"> {{item.value}} </option>
+      </select>
+    </div>
+    
     
     <div class="img-dog">
       <img src={{image}} alt="{{this.breed}}" class="image-dog"/>
@@ -21,13 +24,13 @@
   </section>
   <aside>
     <h2 class="blok"> {{paragraph}} </h2>
-    <a href="https://en.wikipedia.org/wiki/{{this.breed}}"> <button class="button"> Link! </button>  </a>
+    <button class="button"> <a href="https://en.wikipedia.org/wiki/{{this.breed}}"> Link! </a> </button> 
   
   </aside>
 </main>
 
 <footer>
-  Projekt zreazliwany przez Łukasz Pietrzykowskiego. <a href="https://github.com/LukaszPietrzykowski16/Psintagram"> Link do githuba </a>
+  <p> Projekt zreazliwany przez Łukasz Pietrzykowskiego. <a href="https://github.com/LukaszPietrzykowski16/Psintagram"> Link do githuba </a> </p>
 
 </footer>
 
