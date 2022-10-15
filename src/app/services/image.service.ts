@@ -10,8 +10,6 @@ export class ImageService {
   constructor(private httpClient: HttpClient) { }
  
   getData(inputValue: string){
-    
-    console.log(inputValue)
     return this.httpClient.get(`https://dog.ceo/api/breed/${inputValue}/images/random`);
   }
   
